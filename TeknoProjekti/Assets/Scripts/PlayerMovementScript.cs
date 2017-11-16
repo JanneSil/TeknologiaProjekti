@@ -7,6 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     public float speed;
     public GameObject playerRangePos;
     public GameObject playerRangePosTwo;
+    private Animator anim;
 
     public GameObject playerArrow;
     private float moveVertical;
@@ -16,6 +17,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     public float timeBetweenAttacks = 0.5f;
     float timer;
+    float animationTimer;
+    float timeBeforeAnimation = 0.2f;
 
     bool facingRight = true;
 
@@ -23,7 +26,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -44,6 +47,7 @@ public class PlayerMovementScript : MonoBehaviour
             Flip();
 
         timer += Time.deltaTime;
+        
 
         if (Input.GetButton("Fire1"))
         {
@@ -57,12 +61,20 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (Input.GetButton("Fire2") && timer >= timeBetweenAttacks)
         {
-            //Animation
+
+            animationTimer += Time.deltaTime;
             //Sound
             if (facingRight)
+            {
+                anim.SetTrigger("Shoot");
                 Instantiate(playerArrow, playerRangePos.transform.position, playerRangePos.transform.rotation);
+                
+            }
             else if (!facingRight)
+            {
                 Instantiate(playerArrow, playerRangePosTwo.transform.position, playerRangePosTwo.transform.rotation);
+                anim.SetTrigger("Shoot");
+            }
 
             timer = 0f;
         }
