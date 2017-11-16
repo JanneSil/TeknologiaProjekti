@@ -30,12 +30,13 @@ public class PlayerMovementScript : MonoBehaviour
     {
         moveVertical = Input.GetAxis("Vertical");
         moveHorizontal = Input.GetAxis("Horizontal");
-        
+
+        transform.Translate(0, 1 * moveVertical * speed * Time.deltaTime, 0);
+        transform.Translate(1 * moveHorizontal * speed * Time.deltaTime, 0, 0);
+
     }
     void FixedUpdate()
     {
-        transform.Translate(1 * moveHorizontal * speed * Time.deltaTime, 0, 0);
-        transform.Translate(0, 1 * moveVertical * speed * Time.deltaTime, 0);
 
         if (moveHorizontal > 0 && !facingRight)
             Flip();
