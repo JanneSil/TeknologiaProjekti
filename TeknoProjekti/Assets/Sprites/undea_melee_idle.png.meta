@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 21c8909adc98f5049bca1b0409ef06b7
-timeCreated: 1510830687
-licenseType: Free
+timeCreated: 1511270530
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: undea_melee_idle_0
+    21300002: undea_melee_idle_1
+    21300004: undea_melee_idle_2
+    21300006: undea_melee_idle_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,7 +72,59 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: undea_melee_idle_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 12
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undea_melee_idle_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 12
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undea_melee_idle_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 11
+        width: 43
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undea_melee_idle_3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 11
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
