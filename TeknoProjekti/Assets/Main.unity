@@ -214,11 +214,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &840144305 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1244493980997854, guid: 49bdc4ace5181094bb3f5f35691ce421,
-    type: 2}
-  m_PrefabInternal: {fileID: 2027365474}
 --- !u!1 &938252566
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,8 +242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1672773185}
-  enemy: {fileID: 840144305}
-  spawnTime: 4
+  enemy: {fileID: 1244493980997854, guid: 49bdc4ace5181094bb3f5f35691ce421, type: 2}
+  spawnTime: 6
   spawnPoints:
   - {fileID: 1298032328}
   - {fileID: 961355884}
@@ -486,14 +481,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4112220933146152, guid: b75d339ab98ed524fa0d6e304fad2491, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.064
-      objectReference: {fileID: 0}
-    - target: {fileID: 4906410791436864, guid: b75d339ab98ed524fa0d6e304fad2491, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.064
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b75d339ab98ed524fa0d6e304fad2491, type: 2}
   m_IsPrefabParent: 0
@@ -557,9 +544,8 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1672773190}
-    - target: {fileID: 61464947400086138, guid: 49bdc4ace5181094bb3f5f35691ce421,
-        type: 2}
-      propertyPath: m_IsTrigger
+    - target: {fileID: 1244493980997854, guid: 49bdc4ace5181094bb3f5f35691ce421, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

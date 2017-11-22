@@ -12,8 +12,10 @@ public class PlayerMovementScript : MonoBehaviour
     public GameObject playerArrow;
     private float moveVertical;
     private float moveHorizontal;
-    GameObject enemy;
+    public GameObject enemy;
     private bool inRange;
+
+    EnemyMeleeScript targetHealth;
 
     public float timeBetweenAttacks = 0.5f;
     float timer;
@@ -56,6 +58,9 @@ public class PlayerMovementScript : MonoBehaviour
             if (inRange)
             {
                 // Do damage;
+                //EnemyMeleeScript targetHealth = targetRigidbody.GetComponent<TankHealth>();
+                Debug.Log("Did damage");
+                targetHealth.Damage(10);
             }
         }
 
@@ -86,19 +91,22 @@ public class PlayerMovementScript : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter2D (Collider2D other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             inRange = true;
+            Debug.Log("inRange");
+            targetHealth = other.GetComponent<EnemyMeleeScript>();
         }
     }
 
-    void OnTriggerExit (Collider other)
+    void OnTriggerExit2D (Collider2D other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             inRange = false;
+            targetHealth = null;
         }
     }
 }

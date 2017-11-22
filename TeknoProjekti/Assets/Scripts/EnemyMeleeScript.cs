@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMeleeScript : MonoBehaviour
 {
     public float speed = 1.0f;
-    public Transform target;
+    private Transform player;
     private float minDistance = 0.6f;
     private float distanceToTarget;
 
@@ -20,7 +20,7 @@ public class EnemyMeleeScript : MonoBehaviour
     void Awake()
     {
         currentHealth = startingHealth;
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         ribo = GetComponent<Rigidbody2D>();
     }
     
@@ -32,11 +32,11 @@ public class EnemyMeleeScript : MonoBehaviour
     
     void Update()
     {
-        distanceToTarget = Vector2.Distance(transform.position, target.position);
+        distanceToTarget = Vector2.Distance(transform.position, player.position);
 
-        if(distanceToTarget > minDistance)
+        if(distanceToTarget > minDistance && !dead)
         {
-            transform.position = (Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
+            transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
         }
         
         if(distanceToTarget <= minDistance)
@@ -70,7 +70,7 @@ public class EnemyMeleeScript : MonoBehaviour
     {
         dead = true;
 
-        GetComponent<EnemyMeleeScript>().enabled = false;
+        //GetComponent<EnemyMeleeScript>().enabled = false;
 
     }
 }
