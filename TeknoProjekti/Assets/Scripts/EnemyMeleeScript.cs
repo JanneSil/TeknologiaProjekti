@@ -38,9 +38,10 @@ public class EnemyMeleeScript : MonoBehaviour
         {
             transform.position = (Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
         }
-        if (currentHealth <= 0 && !dead)
+        
+        if(distanceToTarget <= minDistance)
         {
-            Death();
+
         }
 
     }
@@ -69,7 +70,7 @@ public class EnemyMeleeScript : MonoBehaviour
     {
         dead = true;
 
-        
+        GetComponent<EnemyMeleeScript>().enabled = false;
 
     }
 }
