@@ -8,6 +8,7 @@ public class EnemyMeleeScript : MonoBehaviour
     private Transform player;
     private float minDistance = 0.6f;
     private float distanceToTarget;
+    public PlayerHealthScript playerHealth;
 
     public Rigidbody2D ribo;
    
@@ -22,6 +23,7 @@ public class EnemyMeleeScript : MonoBehaviour
         currentHealth = startingHealth;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         ribo = GetComponent<Rigidbody2D>();
+        playerHealth = player.GetComponent<PlayerHealthScript>();
     }
     
     /*void Start()
@@ -41,7 +43,7 @@ public class EnemyMeleeScript : MonoBehaviour
         
         if(distanceToTarget <= minDistance)
         {
-
+            Attack();
         }
 
     }
@@ -53,7 +55,8 @@ public class EnemyMeleeScript : MonoBehaviour
 
     public void Attack()
     {
-
+        Debug.Log("Enemy did damage.");
+        playerHealth.TakeDamage(10);
     }
 
     public void Damage(int amount)

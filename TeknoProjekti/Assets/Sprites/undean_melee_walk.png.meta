@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 2462b8ddf6f9eb549b122296c72d14fd
-timeCreated: 1510830687
+timeCreated: 1511435858
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: undean_melee_walk_0
+    21300002: undean_melee_walk_1
+    21300004: undean_melee_walk_2
+    21300006: undean_melee_walk_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -27,7 +31,7 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -68,7 +72,59 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: undean_melee_walk_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 10
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undean_melee_walk_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 10
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undean_melee_walk_2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 10
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undean_melee_walk_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 10
+        width: 43
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
