@@ -9,6 +9,9 @@ public class EnemyMeleeScript : MonoBehaviour
     private float minDistance = 0.6f;
     private float distanceToTarget;
     public PlayerHealthScript playerHealth;
+   
+    public float hitRate = 2f;
+    public float nextHit = 0f;
 
     public Rigidbody2D ribo;
    
@@ -41,8 +44,9 @@ public class EnemyMeleeScript : MonoBehaviour
             transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
         }
         
-        if(distanceToTarget <= minDistance)
+        if(distanceToTarget <= minDistance && Time.time > nextHit)
         {
+            nextHit = Time.time + hitRate;
             Attack();
         }
 
