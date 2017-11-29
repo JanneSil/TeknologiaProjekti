@@ -51,9 +51,10 @@ public class PlayerMovementScript : MonoBehaviour
         timer += Time.deltaTime;
         
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && timer >= timeBetweenAttacks)
         {
             //Play Animation
+            anim.SetTrigger("Attack");
             //Play Sound
             if (inRange)
             {
@@ -62,12 +63,14 @@ public class PlayerMovementScript : MonoBehaviour
                 Debug.Log("Did damage");
                 targetHealth.Damage(10);
             }
+
+            timer = 0f;
         }
 
         if (Input.GetButton("Fire2") && timer >= timeBetweenAttacks)
         {
 
-            animationTimer += Time.deltaTime;
+            //animationTimer += Time.deltaTime;
             //Sound
             if (facingRight)
             {

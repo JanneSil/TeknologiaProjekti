@@ -7,7 +7,8 @@ public class PlayerHealthScript : MonoBehaviour {
     public int startingHealth = 100;                           
     public int currentHealth;                                   
                                                               
-    PlayerMovementScript playerMovement;                              
+    PlayerMovementScript playerMovement;
+    private Animator anim;
 
     bool isDead;                                                                                           
 
@@ -17,6 +18,8 @@ public class PlayerHealthScript : MonoBehaviour {
         playerMovement = GetComponent<PlayerMovementScript>();
 
         currentHealth = startingHealth;
+
+        anim = GetComponent<Animator>();
     }
 
 
@@ -45,7 +48,7 @@ public class PlayerHealthScript : MonoBehaviour {
     {
         isDead = true;
 
-        //Play animation
+        anim.SetBool("isDead", true);
 
         //Play audio
 
