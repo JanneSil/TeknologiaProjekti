@@ -28,13 +28,13 @@ public class PlayerArrowScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collided");
+        //Debug.Log("Collided");
 
         if (other.tag == "Enemy")
         {
             targetHealth = other.GetComponent<EnemyMeleeScript>();
             targetHealth.Damage(10);
-            Debug.Log("Damage Done");
+            //Debug.Log("Damage Done");
             Destroy(gameObject);
 
         }

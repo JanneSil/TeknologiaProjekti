@@ -10,6 +10,7 @@ public class PlayerHealthScript : MonoBehaviour {
     PlayerMovementScript playerMovement;
     private Animator anim;
 
+
     bool isDead;                                                                                           
 
 
@@ -20,6 +21,7 @@ public class PlayerHealthScript : MonoBehaviour {
         currentHealth = startingHealth;
 
         anim = GetComponent<Animator>();
+
     }
 
 

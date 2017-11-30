@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 guid: 637098f836d57264a8af8a1d792f90dd
-timeCreated: 1511356849
+timeCreated: 1512039129
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: undead_melee_death_sprite_0
+    21300002: undead_melee_death_sprite_1
+    21300004: undead_melee_death_sprite_2
+    21300006: undead_melee_death_sprite_3
+    21300008: undead_melee_death_sprite_4
+    21300010: undead_melee_death_sprite_5
+    21300012: undead_melee_death_sprite_6
+    21300014: undead_melee_death_sprite_7
+    21300016: undead_melee_death_sprite_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -124,7 +133,124 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 0
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 0
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 0
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 0
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: undead_melee_death_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0
+        width: 99
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

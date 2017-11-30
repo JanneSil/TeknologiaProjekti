@@ -20,15 +20,19 @@ public class PlayerMovementScript : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     float timer;
     float animationTimer;
-    float timeBeforeAnimation = 0.2f;
 
     bool facingRight = true;
+
+    private AudioSource playerAudio;
+    private SpriteRenderer spriteRenderer;
 
 
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -44,9 +48,16 @@ public class PlayerMovementScript : MonoBehaviour
     {
 
         if (moveHorizontal > 0 && !facingRight)
+        {
             Flip();
+            spriteRenderer.flipX = false;
+        }
+
         else if (moveHorizontal < 0 && facingRight)
+        {
             Flip();
+            spriteRenderer.flipX = true;
+        }
 
         timer += Time.deltaTime;
         
@@ -56,6 +67,7 @@ public class PlayerMovementScript : MonoBehaviour
             //Play Animation
             anim.SetTrigger("Attack");
             //Play Sound
+
             if (inRange)
             {
                 // Do damage;
@@ -70,8 +82,8 @@ public class PlayerMovementScript : MonoBehaviour
         if (Input.GetButton("Fire2") && timer >= timeBetweenAttacks)
         {
 
-            //animationTimer += Time.deltaTime;
-            //Sound
+            playerAudio.Play();
+
             if (facingRight)
             {
                 anim.SetTrigger("Shoot");
@@ -92,6 +104,7 @@ public class PlayerMovementScript : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
+        
     }
 
     void OnTriggerEnter2D (Collider2D other)

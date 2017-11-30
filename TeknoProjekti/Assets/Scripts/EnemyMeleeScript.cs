@@ -8,16 +8,25 @@ public class EnemyMeleeScript : MonoBehaviour
     private Transform player;
     private float minDistance = 0.6f;
     private float distanceToTarget;
-    public PlayerHealthScript playerHealth;
+    private PlayerHealthScript playerHealth;
    
     public float hitRate = 2f;
     public float nextHit = 0f;
 
     public Rigidbody2D ribo;
-   
+    private Animator anim;
+
+    private Collider2D colliderOne;
+    public Collider2D colliderTwo;
+
 
     public int startingHealth = 50;
     public int currentHealth;
+
+    public const string LAYER_NAME = "Dead";
+
+    public int sortingOrder = 0;
+    private SpriteRenderer sprite;
 
     bool dead;
 
@@ -27,6 +36,9 @@ public class EnemyMeleeScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         ribo = GetComponent<Rigidbody2D>();
         playerHealth = player.GetComponent<PlayerHealthScript>();
+        anim = GetComponent<Animator>();
+        colliderOne = GetComponent<BoxCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     
     /*void Start()
@@ -44,7 +56,7 @@ public class EnemyMeleeScript : MonoBehaviour
             transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
         }
         
-        if(distanceToTarget <= minDistance && Time.time > nextHit)
+        if(distanceToTarget <= minDistance && Time.time > nextHit && !dead)
         {
             nextHit = Time.time + hitRate;
             Attack();
@@ -76,6 +88,14 @@ public class EnemyMeleeScript : MonoBehaviour
     public void Death()
     {
         dead = true;
+        anim.SetBool("isDead", true);
+
+        colliderOne.enabled = false;
+        colliderTwo.enabled = false;
+
+        sprite.sortingOrder = sortingOrder;
+
+        sprite.sortingLayerName = LAYER_NAME;
 
         //GetComponent<EnemyMeleeScript>().enabled = false;
 
