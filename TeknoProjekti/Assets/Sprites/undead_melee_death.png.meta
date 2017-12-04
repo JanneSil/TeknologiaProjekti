@@ -1,24 +1,18 @@
 fileFormatVersion: 2
-guid: a3118d36764adf74fa9d715caa71830b
-timeCreated: 1511886348
+guid: b310c50f125f5294199e6972ff2b060e
+timeCreated: 1512048179
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: slash_sprite_corrected_0
-    21300002: slash_sprite_corrected_1
-    21300004: slash_sprite_corrected_2
-    21300006: slash_sprite_corrected_3
-    21300008: slash_sprite_corrected_4
-    21300010: slash_sprite_corrected_5
-    21300012: slash_sprite_corrected_6
-    21300014: slash_sprite_corrected_7
-    21300016: slash_sprite_corrected_8
-    21300018: slash_sprite_corrected_9
-    21300020: slash_sprite_corrected_10
-    21300022: slash_sprite_corrected_11
-    21300024: slash_sprite_corrected_12
-    21300026: slash_sprite_corrected_14
-    21300028: slash_sprite_corrected_16
+    21300000: undead_melee_death_0
+    21300002: undead_melee_death_2
+    21300004: undead_melee_death_3
+    21300006: undead_melee_death_4
+    21300008: undead_melee_death_5
+    21300010: undead_melee_death_7
+    21300012: undead_melee_death_8
+    21300014: undead_melee_death_9
+    21300016: undead_melee_death_10
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -42,7 +36,7 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -85,7 +79,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slash_sprite_corrected_5
+      name: undead_melee_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -93,124 +87,111 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_6
+      name: undead_melee_death_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 200
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_7
+      name: undead_melee_death_3
       rect:
         serializedVersion: 2
-        x: 256
+        x: 400
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_8
+      name: undead_melee_death_4
       rect:
         serializedVersion: 2
-        x: 384
+        x: 550
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_9
+      name: undead_melee_death_5
       rect:
         serializedVersion: 2
-        x: 512
+        x: 700
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_10
+      name: undead_melee_death_7
       rect:
         serializedVersion: 2
-        x: 640
+        x: 860
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_11
+      name: undead_melee_death_8
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1020
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_12
+      name: undead_melee_death_9
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1200
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: slash_sprite_corrected_14
+      name: undead_melee_death_10
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1372
         y: 0
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: slash_sprite_corrected_16
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

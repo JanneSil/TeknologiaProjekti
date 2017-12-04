@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour {
 
@@ -9,9 +10,15 @@ public class PlayerHealthScript : MonoBehaviour {
                                                               
     PlayerMovementScript playerMovement;
     private Animator anim;
+    public Slider healthSlider;
 
+    private AudioSource playerAudio;
+    public AudioSource playerWalkAudio;
 
-    bool isDead;                                                                                           
+    public AudioClip playerDeathClip;
+    public AudioClip playerHitClip;
+
+   public bool isDead;                                                                                           
 
 
     void Awake()
@@ -20,7 +27,11 @@ public class PlayerHealthScript : MonoBehaviour {
 
         currentHealth = startingHealth;
 
+        playerAudio = GetComponent<AudioSource>();
+
         anim = GetComponent<Animator>();
+
+        healthSlider.value = currentHealth;
 
     }
 
@@ -36,8 +47,13 @@ public class PlayerHealthScript : MonoBehaviour {
         currentHealth -= amount;
 
         //Slider change here
+        healthSlider.value = currentHealth;
 
         //Play audio here
+        playerAudio.clip = playerHitClip;
+
+        if(!isDead)
+            playerAudio.Play();
 
         if (currentHealth <= 0 && !isDead)
         {
@@ -48,6 +64,9 @@ public class PlayerHealthScript : MonoBehaviour {
 
     void Death()
     {
+        playerAudio.clip = playerDeathClip;
+        playerAudio.Play();
+        playerWalkAudio.Stop();
         isDead = true;
 
         anim.SetBool("isDead", true);

@@ -6,7 +6,7 @@ public class EnemyMeleeScript : MonoBehaviour
 {
     public float speed = 1.0f;
     private Transform player;
-    private float minDistance = 0.6f;
+    private float minDistance = 1.4f;
     private float distanceToTarget;
     private PlayerHealthScript playerHealth;
    
@@ -30,6 +30,9 @@ public class EnemyMeleeScript : MonoBehaviour
 
     bool dead;
 
+    private AudioSource enemyAudio;
+    public AudioClip enemyWalkingClip;
+
     void Awake()
     {
         currentHealth = startingHealth;
@@ -39,6 +42,7 @@ public class EnemyMeleeScript : MonoBehaviour
         anim = GetComponent<Animator>();
         colliderOne = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
+        enemyAudio = GetComponent<AudioSource>();
     }
     
     /*void Start()
@@ -54,11 +58,13 @@ public class EnemyMeleeScript : MonoBehaviour
         if(distanceToTarget > minDistance && !dead)
         {
             transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+            anim.SetBool("Walking", true);
         }
         
         if(distanceToTarget <= minDistance && Time.time > nextHit && !dead)
         {
             nextHit = Time.time + hitRate;
+            anim.SetBool("Walking", false);
             Attack();
         }
 
@@ -73,6 +79,8 @@ public class EnemyMeleeScript : MonoBehaviour
     {
         Debug.Log("Enemy did damage.");
         playerHealth.TakeDamage(10);
+        anim.SetTrigger("Attacking");
+
     }
 
     public void Damage(int amount)

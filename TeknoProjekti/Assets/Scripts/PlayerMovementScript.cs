@@ -19,11 +19,19 @@ public class PlayerMovementScript : MonoBehaviour
 
     public float timeBetweenAttacks = 0.5f;
     float timer;
-    float animationTimer;
+    float attackTimer;
 
     bool facingRight = true;
+    bool isWalking = false;
 
     private AudioSource playerAudio;
+    public AudioSource playerWalkAudio;
+
+    public AudioClip playerRangeClip;
+    public AudioClip playerMeleeClip;
+    public AudioClip playerWalkClip;
+    
+
     private SpriteRenderer spriteRenderer;
 
 
@@ -40,8 +48,15 @@ public class PlayerMovementScript : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
         moveHorizontal = Input.GetAxis("Horizontal");
 
-        transform.Translate(0, 1 * moveVertical * speed * Time.deltaTime, 0);
-        transform.Translate(1 * moveHorizontal * speed * Time.deltaTime, 0, 0);
+       
+        
+            transform.Translate(0, 1 * moveVertical * speed * Time.deltaTime, 0);
+            transform.Translate(1 * moveHorizontal * speed * Time.deltaTime, 0, 0);
+        
+ 
+
+        Walking();
+            
 
     }
     void FixedUpdate()
@@ -67,6 +82,9 @@ public class PlayerMovementScript : MonoBehaviour
             //Play Animation
             anim.SetTrigger("Attack");
             //Play Sound
+            playerAudio.clip = playerMeleeClip;
+            playerAudio.Play();
+           
 
             if (inRange)
             {
@@ -81,7 +99,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (Input.GetButton("Fire2") && timer >= timeBetweenAttacks)
         {
-
+            playerAudio.clip = playerRangeClip;
             playerAudio.Play();
 
             if (facingRight)
@@ -99,6 +117,29 @@ public class PlayerMovementScript : MonoBehaviour
             timer = 0f;
         }
 
+    }
+
+
+    void Walking()
+    {
+        if (moveVertical != 0 || moveHorizontal != 0)
+        {
+            anim.SetBool("Walking", true);
+
+            if (isWalking == false)
+            {
+                playerWalkAudio.clip = playerWalkClip;
+                playerWalkAudio.Play();
+                isWalking = true;
+            }
+
+        }
+        else
+        {
+            anim.SetBool("Walking", false);
+            isWalking = false;
+            playerWalkAudio.Stop();
+        }
     }
 
     void Flip()
