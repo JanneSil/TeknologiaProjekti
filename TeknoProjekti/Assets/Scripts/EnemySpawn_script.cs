@@ -6,25 +6,53 @@ public class EnemySpawn_script : MonoBehaviour
 {
     public PlayerHealthScript playerHealth;
     public GameObject enemy;
-    public float spawnTime = 4f;
     public Transform[] spawnPoints;
+    public CameraScript cameraScript;
 
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        StartCoroutine(SpawnWave());
     }
 
-    // Update is called once per frame
-    void Spawn()
+    public void SpawnWaves()
     {
-        if(playerHealth.currentHealth <= 0f)
+        if (cameraScript.spawnWave == 0)
         {
-            return;
+            StartCoroutine(SpawnWaveTwo());
+        }
+    }
+
+    IEnumerator SpawnWave()
+    {
+        if (playerHealth.currentHealth <= 0f)
+        {
+            yield break;
         }
 
-        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        for (int i = 0; i < 5; i++)
+        {
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            yield return new WaitForSeconds(3);
 
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        }
     }
+
+    public IEnumerator SpawnWaveTwo()
+    {
+        if (playerHealth.currentHealth <= 0f)
+        {
+            yield break;
+        }
+
+        for (int i = 0; i < 8; i++)
+        {
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            yield return new WaitForSeconds(2.5f);
+
+        }
+    }
+
 }

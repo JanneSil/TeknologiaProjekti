@@ -27,7 +27,8 @@ public class PlayerMovementScript : MonoBehaviour
     private AudioSource playerAudio;
     public AudioSource playerWalkAudio;
 
-    public AudioClip playerRangeClip;
+    [SerializeField]
+    private AudioClip playerRangeClip;
     public AudioClip playerMeleeClip;
     public AudioClip playerWalkClip;
     
