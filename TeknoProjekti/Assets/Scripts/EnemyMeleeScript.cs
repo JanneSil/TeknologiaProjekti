@@ -12,6 +12,7 @@ public class EnemyMeleeScript : MonoBehaviour
    
     public float hitRate = 2f;
     public float nextHit = 0f;
+    public int DamageValue = 10;
 
     public Rigidbody2D ribo;
     private Animator anim;
@@ -31,7 +32,11 @@ public class EnemyMeleeScript : MonoBehaviour
     bool dead;
 
     private AudioSource enemyAudio;
-    public AudioClip enemyWalkingClip;
+    private SpriteRenderer spriteRenderer;
+
+
+    [SerializeField]
+    private AudioClip enemyWalkingClip, enemySlashClip, enemyDamageClip;
 
     void Awake()
     {
@@ -43,29 +48,49 @@ public class EnemyMeleeScript : MonoBehaviour
         colliderOne = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         enemyAudio = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    
+
     /*void Start()
     {
 
     }*/
 
-    
+
     void Update()
     {
         distanceToTarget = Vector2.Distance(transform.position, player.position);
 
-        if(distanceToTarget > minDistance && !dead)
+        if(transform.position.x >= player.position.x && !dead)
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        if (transform.position.x < player.position.x && !dead)
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        if (distanceToTarget > minDistance && !dead && playerHealth.isDead == false)
         {
             transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
             anim.SetBool("Walking", true);
         }
         
-        if(distanceToTarget <= minDistance && Time.time > nextHit && !dead)
+        if(distanceToTarget <= minDistance && Time.time > nextHit && !dead && playerHealth.isDead == false)
         {
             nextHit = Time.time + hitRate;
             anim.SetBool("Walking", false);
-            Attack();
+            anim.SetTrigger("Attacking");
+            enemyAudio.clip = enemySlashClip;
+            enemyAudio.Play();
+            StartCoroutine(EnemyAttack());
+        }
+
+        if(playerHealth.isDead == true)
+        {
+            anim.SetBool("Walking", false);
+
         }
 
     }
@@ -75,19 +100,26 @@ public class EnemyMeleeScript : MonoBehaviour
         
     }
 
-    public void Attack()
-    {
-        Debug.Log("Enemy did damage.");
-        playerHealth.TakeDamage(10);
-        anim.SetTrigger("Attacking");
 
+    IEnumerator EnemyAttack()
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        if (distanceToTarget <= minDistance && !dead)
+        {
+            playerHealth.TakeDamage(DamageValue);
+        }
+        
+        yield return null;
     }
 
     public void Damage(int amount)
     {
         currentHealth -= amount;
+        enemyAudio.clip = enemyDamageClip;
+        enemyAudio.Play();
 
-        if(currentHealth <= 0 && !dead)
+        if (currentHealth <= 0 && !dead)
         {
             Death();
         }

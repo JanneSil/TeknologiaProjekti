@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -7,15 +8,22 @@ public class PlayerMovementScript : MonoBehaviour
     public float speed;
     public GameObject playerRangePos;
     public GameObject playerRangePosTwo;
+    public GameObject ColliderOne;
+    public GameObject ColliderTwo;
+
     private Animator anim;
+    public Text ArrowCountText;
+    private int arrowCount = 10;
 
     public GameObject playerArrow;
     private float moveVertical;
     private float moveHorizontal;
     public GameObject enemy;
     private bool inRange;
+    public int SlashDamage;
 
     EnemyMeleeScript targetHealth;
+    PlayerColliderScript colliderScript;
 
     public float timeBetweenAttacks = 0.5f;
     float timer;
@@ -42,26 +50,24 @@ public class PlayerMovementScript : MonoBehaviour
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        ArrowCountText.text = "Arrows: " + arrowCount;
+
     }
 
     void Update()
     {
-        moveVertical = Input.GetAxis("Vertical");
-        moveHorizontal = Input.GetAxis("Horizontal");
-
-       
-        
-            transform.Translate(0, 1 * moveVertical * speed * Time.deltaTime, 0);
-            transform.Translate(1 * moveHorizontal * speed * Time.deltaTime, 0, 0);
-        
- 
-
-        Walking();
             
 
     }
     void FixedUpdate()
     {
+        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal");
+
+        transform.Translate(0, 1 * moveVertical * speed * Time.deltaTime, 0);
+        transform.Translate(1 * moveHorizontal * speed * Time.deltaTime, 0, 0);
+
+        Walking();
 
         if (moveHorizontal > 0 && !facingRight)
         {
@@ -80,28 +86,28 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (Input.GetButton("Fire1") && timer >= timeBetweenAttacks)
         {
-            //Play Animation
             anim.SetTrigger("Attack");
-            //Play Sound
             playerAudio.clip = playerMeleeClip;
             playerAudio.Play();
-           
+            timer = 0f;
 
-            if (inRange)
+            if (facingRight)
             {
-                // Do damage;
-                //EnemyMeleeScript targetHealth = targetRigidbody.GetComponent<TankHealth>();
-                Debug.Log("Did damage");
-                targetHealth.Damage(10);
+                StartCoroutine(PlayerSwordAttackRight());
             }
 
-            timer = 0f;
+            else if (!facingRight)
+            {
+                StartCoroutine(PlayerSwordAttackLeft());
+            }
         }
 
-        if (Input.GetButton("Fire2") && timer >= timeBetweenAttacks)
+        if (Input.GetButton("Fire2") && timer >= timeBetweenAttacks && arrowCount > 0)
         {
             playerAudio.clip = playerRangeClip;
             playerAudio.Play();
+            arrowCount -= 1;
+            ArrowCountText.text = "Arrows: " + arrowCount;
 
             if (facingRight)
             {
@@ -118,6 +124,38 @@ public class PlayerMovementScript : MonoBehaviour
             timer = 0f;
         }
 
+    }
+
+    IEnumerator PlayerSwordAttackRight()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        colliderScript = ColliderOne.GetComponent<PlayerColliderScript>();
+
+        if (colliderScript.inRange)
+        {
+            colliderScript.targetHealth.Damage(SlashDamage);
+        }
+
+        //timer = 0f;
+
+        yield return null;
+    }
+
+    IEnumerator PlayerSwordAttackLeft()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        colliderScript = ColliderTwo.GetComponent<PlayerColliderScript>();
+
+        if (colliderScript.inRange)
+        {
+            colliderScript.targetHealth.Damage(SlashDamage);
+        }
+
+        //timer = 0f;
+
+        yield return null;
     }
 
 
@@ -149,17 +187,15 @@ public class PlayerMovementScript : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D (Collider2D other)
+    /*private void OnTriggerEnter2D (Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            inRange = true;
-            Debug.Log("inRange");
+        if (other.gameObject.tag == "Enemy" && targetHealth == null)
+        {            
             targetHealth = other.GetComponent<EnemyMeleeScript>();
         }
     }
 
-    void OnTriggerExit2D (Collider2D other)
+    private void OnTriggerExit2D (Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -167,4 +203,19 @@ public class PlayerMovementScript : MonoBehaviour
             targetHealth = null;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("inRange");
+            inRange = true;
+        }
+
+        if (other.gameObject.tag == "Enemy" && targetHealth == null)
+        {
+            targetHealth = other.GetComponent<EnemyMeleeScript>();
+        }
+
+    }*/
 }

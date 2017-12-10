@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerArrowScript : MonoBehaviour
 {
 
-    public float speed;
+    public float Speed;
 
     public Rigidbody2D rb;
 
     public float MaxLifeTime = 3f;
+    public int ArrowDamage = 20;
+
+    private bool secondHit = false;
+
     EnemyMeleeScript targetHealth;
 
     
@@ -23,19 +27,25 @@ public class PlayerArrowScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * Speed;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("Collided");
 
         if (other.tag == "Enemy")
         {
             targetHealth = other.GetComponent<EnemyMeleeScript>();
-            targetHealth.Damage(10);
-            //Debug.Log("Damage Done");
-            Destroy(gameObject);
+            targetHealth.Damage(ArrowDamage);
+
+            if (secondHit)
+            {
+                Destroy(gameObject);
+
+            }
+
+            secondHit = true;
+           // Destroy(gameObject);
 
         }
 

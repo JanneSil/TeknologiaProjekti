@@ -31,14 +31,33 @@ public class CameraScript : MonoBehaviour {
 
         }
             
-        if (player.transform.position.x > 19.8f && player.transform.position.x < 32.8f) 
-            setPosition.x = 26.13f; 
+        if (player.transform.position.x > 19.8f && player.transform.position.x < 32.8f)
+        {
+            setPosition.x = 26.13f;
+
+            if (spawnWave == 1)
+            {
+                enemySpawnScript.SpawnWaves();
+                spawnWave = 2;
+            }
+        }
         if (player.transform.position.x > 32.8f && player.transform.position.x < 45.8f)
+        {
             setPosition.x = 39.5f;
+
+            if (spawnWave == 2)
+            {
+                enemySpawnScript.SpawnWaves();
+                spawnWave = 3;
+            }
+        }
         if (player.transform.position.x > 45.8f && player.transform.position.x < 58.8f)
+        {
             setPosition.x = 52.87f;
-        if (player.transform.position.x > 58.8f && player.transform.position.x < 71.8f)
-            setPosition.x = 66.24f;
+
+        }
+
+
 
         transform.position = setPosition;
     }

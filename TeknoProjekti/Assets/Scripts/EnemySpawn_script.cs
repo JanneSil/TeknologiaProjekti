@@ -6,8 +6,12 @@ public class EnemySpawn_script : MonoBehaviour
 {
     public PlayerHealthScript playerHealth;
     public GameObject enemy;
+    public GameObject BigEnemy;
     public Transform[] spawnPoints;
+    public Transform[] spawnPointsWaveTwo;
+    public Transform[] spawnPointsWaveThree;
     public CameraScript cameraScript;
+    private int spawnPointIndex;
 
     // Use this for initialization
     void Start()
@@ -21,6 +25,16 @@ public class EnemySpawn_script : MonoBehaviour
         {
             StartCoroutine(SpawnWaveTwo());
         }
+
+        else if (cameraScript.spawnWave == 1)
+        {
+            StartCoroutine(SpawnWaveThree());
+        }
+
+        else if (cameraScript.spawnWave == 2)
+        {
+            StartCoroutine(SpawnBossWave());
+        }
     }
 
     IEnumerator SpawnWave()
@@ -30,29 +44,66 @@ public class EnemySpawn_script : MonoBehaviour
             yield break;
         }
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
-            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            spawnPointIndex = Random.Range(0, spawnPoints.Length);
             Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.5f);
 
         }
     }
 
     public IEnumerator SpawnWaveTwo()
     {
+        yield return new WaitForSeconds(0.5f);
+
         if (playerHealth.currentHealth <= 0f)
         {
             yield break;
         }
 
-        for (int i = 0; i < 8; i++)
+        spawnPointIndex = Random.Range(0, spawnPointsWaveTwo.Length);
+
+        Instantiate(BigEnemy, spawnPointsWaveTwo[spawnPointIndex].position, spawnPointsWaveTwo[spawnPointIndex].rotation);
+
+        for (int i = 0; i < 11; i++)
         {
-            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-            yield return new WaitForSeconds(2.5f);
+            spawnPointIndex = Random.Range(0, spawnPointsWaveTwo.Length);
+            Instantiate(enemy, spawnPointsWaveTwo[spawnPointIndex].position, spawnPointsWaveTwo[spawnPointIndex].rotation);
+            yield return new WaitForSeconds(1.5f);
 
         }
+
     }
 
+    public IEnumerator SpawnWaveThree()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        if (playerHealth.currentHealth <= 0f)
+        {
+            yield break;
+        }
+
+        spawnPointIndex = Random.Range(0, spawnPointsWaveThree.Length);
+
+        Instantiate(BigEnemy, spawnPointsWaveThree[spawnPointIndex].position, spawnPointsWaveThree[spawnPointIndex].rotation);
+
+
+        for (int i = 0; i < 12; i++)
+        {
+            spawnPointIndex = Random.Range(0, spawnPointsWaveThree.Length);
+            Instantiate(enemy, spawnPointsWaveThree[spawnPointIndex].position, spawnPointsWaveThree[spawnPointIndex].rotation);
+            yield return new WaitForSeconds(1.25f);
+
+        }
+
+        Instantiate(BigEnemy, spawnPointsWaveThree[spawnPointIndex].position, spawnPointsWaveThree[spawnPointIndex].rotation);
+
+    }
+
+    public IEnumerator SpawnBossWave()
+    {
+        yield return null;
+    }
 }
