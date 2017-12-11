@@ -15,6 +15,7 @@ public class PlayerArrowScript : MonoBehaviour
     private bool secondHit = false;
 
     EnemyMeleeScript targetHealth;
+    EnemyRangedScript enemyHealth;
 
     
 
@@ -46,6 +47,21 @@ public class PlayerArrowScript : MonoBehaviour
 
             secondHit = true;
            // Destroy(gameObject);
+
+        }
+
+        else if (other.tag == "Ranged")
+        {
+            enemyHealth = other.GetComponent<EnemyRangedScript>();
+            enemyHealth.Damage(ArrowDamage);
+
+            if (secondHit)
+            {
+                Destroy(gameObject);
+
+            }
+
+            secondHit = true;
 
         }
 

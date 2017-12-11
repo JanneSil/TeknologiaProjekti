@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerColliderScript : MonoBehaviour {
 
     public EnemyMeleeScript targetHealth;
+    public EnemyRangedScript enemyHealth;
     public bool inRange;
+    public bool inRangeRanged;
 
 
 	// Use this for initialization
@@ -25,6 +27,12 @@ public class PlayerColliderScript : MonoBehaviour {
             inRange = false;
             targetHealth = null;
         }
+
+        if (other.gameObject.tag == "Ranged")
+        {
+            inRangeRanged = false;
+            enemyHealth = null;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -39,5 +47,14 @@ public class PlayerColliderScript : MonoBehaviour {
             targetHealth = other.GetComponent<EnemyMeleeScript>();
         }
 
+        if (other.gameObject.tag == "Ranged")
+        {
+            inRangeRanged = true;
+        }
+
+        if (other.gameObject.tag == "Ranged" && enemyHealth == null)
+        {
+            enemyHealth = other.GetComponent<EnemyRangedScript>();
+        }
     }
 }

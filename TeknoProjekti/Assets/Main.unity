@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 1375161153
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90a8d804bf9ad3943b91205c623547de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa14a88d6a6d7724dabeff49ad811242, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 4045738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.43, y: 0, z: 0}
+  m_LocalPosition: {x: 18.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -759,6 +759,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1672773185}
   enemy: {fileID: 1244493980997854, guid: 49bdc4ace5181094bb3f5f35691ce421, type: 2}
   BigEnemy: {fileID: 1471426806150170, guid: a6194cb6e8ceb3d49971550a70665be2, type: 2}
+  Ranged: {fileID: 1484107530692416, guid: 1e8209baa1090724e93255c9003e5413, type: 2}
   spawnPoints:
   - {fileID: 1298032328}
   - {fileID: 961355884}

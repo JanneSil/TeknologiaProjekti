@@ -137,6 +137,11 @@ public class PlayerMovementScript : MonoBehaviour
             colliderScript.targetHealth.Damage(SlashDamage);
         }
 
+        if (colliderScript.inRangeRanged)
+        {
+            colliderScript.enemyHealth.Damage(SlashDamage);
+        }
+
         //timer = 0f;
 
         yield return null;
@@ -151,6 +156,11 @@ public class PlayerMovementScript : MonoBehaviour
         if (colliderScript.inRange)
         {
             colliderScript.targetHealth.Damage(SlashDamage);
+        }
+
+        if (colliderScript.inRangeRanged)
+        {
+            colliderScript.enemyHealth.Damage(SlashDamage);
         }
 
         //timer = 0f;
