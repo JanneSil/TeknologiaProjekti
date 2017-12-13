@@ -6,8 +6,11 @@ public class PlayerColliderScript : MonoBehaviour {
 
     public EnemyMeleeScript targetHealth;
     public EnemyRangedScript enemyHealth;
+    public BossScript BossHealth;
+
     public bool inRange;
     public bool inRangeRanged;
+    public bool inRangeBoss;
 
 
 	// Use this for initialization
@@ -33,6 +36,12 @@ public class PlayerColliderScript : MonoBehaviour {
             inRangeRanged = false;
             enemyHealth = null;
         }
+
+        if (other.gameObject.tag == "Boss")
+        {
+            inRangeBoss = false;
+            BossHealth = null;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -47,6 +56,7 @@ public class PlayerColliderScript : MonoBehaviour {
             targetHealth = other.GetComponent<EnemyMeleeScript>();
         }
 
+
         if (other.gameObject.tag == "Ranged")
         {
             inRangeRanged = true;
@@ -55,6 +65,17 @@ public class PlayerColliderScript : MonoBehaviour {
         if (other.gameObject.tag == "Ranged" && enemyHealth == null)
         {
             enemyHealth = other.GetComponent<EnemyRangedScript>();
+        }
+
+
+        if (other.gameObject.tag == "Boss")
+        {
+            inRangeBoss = true;
+        }
+
+        if (other.gameObject.tag == "Boss" && BossHealth == null)
+        {
+            BossHealth = other.GetComponent<BossScript>();
         }
     }
 }

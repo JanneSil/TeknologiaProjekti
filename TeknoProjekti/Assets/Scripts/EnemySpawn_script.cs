@@ -8,10 +8,13 @@ public class EnemySpawn_script : MonoBehaviour
     public GameObject enemy;
     public GameObject BigEnemy;
     public GameObject Ranged;
+    public GameObject Boss;
+
     public Transform[] spawnPoints;
     public Transform[] spawnPointsWaveTwo;
     public Transform[] spawnPointsWaveThree;
     public CameraScript cameraScript;
+    public Transform BossSpawnPoint;
     private int spawnPointIndex;
 
     // Use this for initialization
@@ -120,6 +123,7 @@ public class EnemySpawn_script : MonoBehaviour
 
     public IEnumerator SpawnBossWave()
     {
+        Instantiate(Boss, BossSpawnPoint.position, BossSpawnPoint.rotation);
         yield return null;
     }
 }

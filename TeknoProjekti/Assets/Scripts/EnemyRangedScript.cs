@@ -35,7 +35,11 @@ public class EnemyRangedScript : MonoBehaviour
     bool dead;
 
     private AudioSource enemyAudio;
-    public AudioClip enemyWalkingClip;
+    public AudioClip EnemyBowClip;
+    public AudioClip EnemyDamageClip;
+
+
+
 
     void Awake()
     {
@@ -59,19 +63,19 @@ public class EnemyRangedScript : MonoBehaviour
     {
         distanceToTarget = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToTarget > minDistance && !dead)
+        if (distanceToTarget > minDistance && !dead && playerHealth.isDead == false)
         {
             transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
 
             anim.SetBool("Walking", true);
         }
 
-        if (distanceToTarget <= 5f && Time.time > nextHit && !dead)
+        if (distanceToTarget <= 7f && Time.time > nextHit && !dead && playerHealth.isDead == false)
         {
             transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
             nextHit = Time.time + hitRate;
             anim.SetBool("Walking", false);
-            Attack();
+            StartCoroutine(Attack());
         }
 
         if (transform.position.x >= player.position.x && !dead)
@@ -91,31 +95,38 @@ public class EnemyRangedScript : MonoBehaviour
 
     }
 
-    public void Attack()
+    IEnumerator Attack()
     {
+        enemyAudio.clip = EnemyBowClip;
+        enemyAudio.Play();
+        yield return new WaitForSeconds(0.2f);
+
 
         if (transform.position.x >= player.position.x && !dead)
         {
 
             anim.SetTrigger("Attacking");
             Instantiate(enemyArrow, EnemyRangePos.transform.position, EnemyRangePos.transform.rotation);
+            yield return null;
 
         }
         else if (transform.position.x < player.position.x && !dead)
         {
             Instantiate(enemyArrow, EnemyRangePosTwo.transform.position, EnemyRangePosTwo.transform.rotation);
             anim.SetTrigger("Attacking");
+            yield return null;
         }
 
-        /*Debug.Log("Enemy did damage.");
-        playerHealth.TakeDamage(10);
-        anim.SetTrigger("Attacking");*/
+        yield return null;
+
 
     }
 
     public void Damage(int amount)
     {
         currentHealth -= amount;
+        enemyAudio.clip = EnemyDamageClip;
+        enemyAudio.Play();
 
         if (currentHealth <= 0 && !dead)
         {

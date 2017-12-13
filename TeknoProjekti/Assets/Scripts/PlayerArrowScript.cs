@@ -16,6 +16,7 @@ public class PlayerArrowScript : MonoBehaviour
 
     EnemyMeleeScript targetHealth;
     EnemyRangedScript enemyHealth;
+    BossScript bossHealth;
 
     
 
@@ -65,6 +66,21 @@ public class PlayerArrowScript : MonoBehaviour
 
         }
 
-       
+        else if (other.tag == "Boss")
+        {
+            bossHealth = other.GetComponent<BossScript>();
+            bossHealth.Damage(ArrowDamage);
+
+            if (secondHit)
+            {
+                Destroy(gameObject);
+
+            }
+
+            secondHit = true;
+
+        }
+
+
     }
 }

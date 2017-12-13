@@ -51,12 +51,6 @@ public class CameraScript : MonoBehaviour {
                 spawnWave = 3;
             }
         }
-        if (player.transform.position.x > 45.8f && player.transform.position.x < 58.8f)
-        {
-            setPosition.x = 52.87f;
-
-        }
-
 
 
         transform.position = setPosition;

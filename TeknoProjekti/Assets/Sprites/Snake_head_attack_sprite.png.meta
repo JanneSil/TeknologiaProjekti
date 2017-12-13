@@ -1,0 +1,339 @@
+fileFormatVersion: 2
+guid: c9f42da689b3a6b42a241d6ba9e13e85
+timeCreated: 1513166307
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Snake_head_attack_sprite_0
+    21300002: Snake_head_attack_sprite_1
+    21300004: Snake_head_attack_sprite_2
+    21300006: Snake_head_attack_sprite_3
+    21300008: Snake_head_attack_sprite_4
+    21300010: Snake_head_attack_sprite_5
+    21300012: Snake_head_attack_sprite_6
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Snake_head_attack_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 164
+        width: 993
+        height: 1210
+      alignment: 9
+      pivot: {x: 0.46211347, y: 0.45854408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -164.28128, y: 605}
+        - {x: -272.67972, y: 556.66394}
+        - {x: -433.81253, y: 328.09836}
+        - {x: -410.37503, y: 281.2131}
+        - {x: -310.76566, y: 222.60655}
+        - {x: -454.32034, y: 23.344254}
+        - {x: -489.4766, y: -46.983616}
+        - {x: -495.33597, y: -73.35657}
+        - {x: -495.33597, y: -454.2992}
+        - {x: -474.82816, y: -568.582}
+        - {x: -401.58597, y: -603.7459}
+        - {x: 404.0781, y: -603.7459}
+        - {x: 496.5, y: -524.6271}
+        - {x: 496.5, y: 345.68033}
+        - {x: 99.390594, y: 605}
+      - - {x: -222.87503, y: -269.68854}
+        - {x: -258.03128, y: -64.56558}
+        - {x: -120.33597, y: 169.86066}
+        - {x: 23.218721, y: 161.06967}
+        - {x: -158.4219, y: 49.717205}
+        - {x: -217.01566, y: -8.889353}
+        - {x: -237.52347, y: -111.45083}
+        - {x: -149.63284, y: -225.73361}
+      - - {x: -442.6016, y: 275.35245}
+        - {x: -442.6016, y: 266.56146}
+        - {x: -433.81253, y: 257.77048}
+        - {x: -427.95316, y: 257.77048}
+        - {x: -419.1641, y: 266.56146}
+        - {x: -419.1641, y: 272.42212}
+        - {x: -427.95316, y: 281.2131}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Snake_head_attack_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 164
+        width: 1108
+        height: 1178
+      alignment: 9
+      pivot: {x: 0.47736388, y: 0.46806338}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 172.36716, y: 589}
+        - {x: -149.89847, y: 589}
+        - {x: -448.7266, y: 520.03485}
+        - {x: -554, y: 294.3996}
+        - {x: -554, y: 118.57991}
+        - {x: -510.25003, y: 106.8586}
+        - {x: -498.53128, y: 109.788925}
+        - {x: -492.6719, y: 112.71925}
+        - {x: -478.02347, y: 98.06762}
+        - {x: -454.58597, y: 83.41598}
+        - {x: -480.95316, y: -221.33813}
+        - {x: -425.2891, y: -364.9242}
+        - {x: -398.9219, y: -411.80945}
+        - {x: -328.6094, y: -502.6496}
+        - {x: -167.4766, y: -587.6291}
+        - {x: 315.92184, y: -587.6291}
+        - {x: 554, y: -452.83405}
+        - {x: 554, y: -7.424189}
+        - {x: 509.28122, y: 197.69876}
+      - - {x: -442.86722, y: -540.7439}
+        - {x: -442.86722, y: -587.6291}
+        - {x: -425.2891, y: -587.6291}
+        - {x: -419.42972, y: -584.6988}
+        - {x: -419.42972, y: -546.60455}
+        - {x: -425.2891, y: -540.7439}
+      - - {x: -41.50003, y: -326.82993}
+        - {x: -202.63284, y: -57.239765}
+        - {x: -85.44534, y: 150.81352}
+        - {x: -79.58597, y: 212.3504}
+        - {x: -82.515656, y: 273.8873}
+        - {x: -79.58597, y: 256.30533}
+        - {x: -76.65628, y: 232.8627}
+        - {x: -6.343782, y: 188.90778}
+        - {x: 90.33591, y: 180.11679}
+        - {x: 271.97653, y: 168.3955}
+        - {x: 286.62497, y: 168.3955}
+        - {x: 20.023405, y: 100.99795}
+        - {x: -94.234406, y: 68.764336}
+        - {x: -179.19534, y: -16.215172}
+        - {x: -170.40628, y: -107.055336}
+        - {x: -149.89847, y: -127.567635}
+        - {x: -91.30472, y: -197.89551}
+        - {x: 5.374968, y: -224.26846}
+        - {x: 87.40622, y: -241.85042}
+        - {x: 289.55466, y: -279.94467}
+        - {x: 298.34372, y: -288.73566}
+        - {x: 307.13278, y: -285.80533}
+        - {x: 298.34372, y: -282.875}
+        - {x: 289.55466, y: -291.666}
+        - {x: 283.69528, y: -291.666}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Snake_head_attack_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 4181
+        y: 164
+        width: 1303
+        height: 1210
+      alignment: 9
+      pivot: {x: 0.548121, y: 0.44818005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 326.99597, y: 605}
+        - {x: 145.35535, y: 605}
+        - {x: -9.918094, y: 342.75}
+        - {x: 13.519406, y: 196.2336}
+        - {x: 86.7616, y: 169.86066}
+        - {x: -21.636845, y: 207.95491}
+        - {x: -352.69153, y: 155.20901}
+        - {x: -598.7853, y: 76.09016}
+        - {x: -651.5, y: -55.7746}
+        - {x: -651.5, y: -422.06558}
+        - {x: -554.83997, y: -553.93036}
+        - {x: -370.26965, y: -603.7459}
+        - {x: 651.5, y: -603.7459}
+        - {x: 651.5, y: 134.69672}
+        - {x: 573.0897, y: 298.79507}
+      - - {x: -338.0431, y: -556.86066}
+        - {x: -346.83215, y: -559.791}
+        - {x: -346.83215, y: -603.7459}
+        - {x: -323.39465, y: -603.7459}
+        - {x: -323.39465, y: -556.86066}
+      - - {x: -89.01965, y: -272.61887}
+        - {x: 4.730344, y: -214.01231}
+        - {x: 180.5116, y: -263.82788}
+        - {x: 177.58191, y: -351.73773}
+      - - {x: -569.4884, y: -164.19673}
+        - {x: -575.3478, y: -140.7541}
+        - {x: -575.3478, y: -152.47542}
+        - {x: -572.4181, y: -178.84837}
+        - {x: -569.4884, y: -175.91805}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Snake_head_attack_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 6287
+        y: 164
+        width: 1872
+        height: 1178
+      alignment: 9
+      pivot: {x: 0.68087167, y: 0.45741788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 348.52338, y: 589}
+        - {x: 278.21088, y: 323.70288}
+        - {x: -934.67975, y: -320.96927}
+        - {x: -934.67975, y: -587.6291}
+        - {x: 936, y: -587.6291}
+        - {x: 936, y: 279.74796}
+        - {x: 732.31244, y: 589}
+      - - {x: -41.12506, y: -540.7439}
+        - {x: -55.7735, y: -540.7439}
+        - {x: -58.703186, y: -549.53485}
+        - {x: -58.703186, y: -584.6988}
+        - {x: -52.84381, y: -587.6291}
+        - {x: -38.195374, y: -587.6291}
+        - {x: -35.265686, y: -578.83813}
+        - {x: -35.265686, y: -543.6742}
+      - - {x: -691.5157, y: -423.53076}
+        - {x: -688.586, y: -403.01846}
+        - {x: -668.0782, y: -411.80945}
+        - {x: -685.6563, y: -429.39142}
+      - - {x: -635.8516, y: -391.29715}
+        - {x: -629.99225, y: -397.1578}
+        - {x: -638.7813, y: -405.9488}
+        - {x: -635.8516, y: -405.9488}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Snake_head_attack_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 9117
+        y: 164
+        width: 2367
+        height: 1196
+      alignment: 9
+      pivot: {x: 0.76490134, y: 0.44757345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 511.0431, y: 598}
+        - {x: 499.32434, y: 237.2582}
+        - {x: 596.004, y: 187.44261}
+        - {x: 707.33215, y: 172.79099}
+        - {x: 481.74622, y: 35.065567}
+        - {x: 440.7306, y: -126.10247}
+        - {x: 522.76184, y: -202.291}
+        - {x: 159.48058, y: -140.7541}
+        - {x: -991.8866, y: -275.5492}
+        - {x: -968.4491, y: -381.041}
+        - {x: -947.9413, y: -439.64755}
+        - {x: -912.78503, y: -448.43854}
+        - {x: -851.2616, y: -433.7869}
+        - {x: -947.9413, y: -460.15985}
+        - {x: -1068.0585, y: -369.3197}
+        - {x: -1164.7382, y: -363.45905}
+        - {x: -1182.3163, y: -395.69263}
+        - {x: -1182.3163, y: -445.5082}
+        - {x: -1135.4413, y: -480.67215}
+        - {x: -810.246, y: -545.13934}
+        - {x: -77.82412, y: -597.88525}
+        - {x: 880.1837, y: -597.88525}
+        - {x: 1058.8947, y: -568.582}
+        - {x: 1183.5, y: -533.418}
+        - {x: 1183.5, y: 410.14755}
+        - {x: 783.504, y: 598}
+      - - {x: 203.42589, y: -551}
+        - {x: 188.77745, y: -551}
+        - {x: 185.84776, y: -559.791}
+        - {x: 185.84776, y: -592.0246}
+        - {x: 191.70714, y: -597.88525}
+        - {x: 200.4962, y: -597.88525}
+        - {x: 209.28526, y: -589.0943}
+        - {x: 209.28526, y: -553.93036}
+      - - {x: -792.66785, y: -460.15985}
+        - {x: -792.66785, y: -463.09018}
+        - {x: -783.8788, y: -457.22952}
+        - {x: -778.0194, y: -451.36887}
+        - {x: -780.9491, y: -451.36887}
+        - {x: -780.9491, y: -457.22952}
+        - {x: -786.8085, y: -460.15985}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Snake_head_attack_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 4154
+        y: 583
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.2265186, y: 4.5}
+        - {x: -3.2265186, y: -1.6004215}
+        - {x: -0.29683113, y: -4.5}
+        - {x: 4.5, y: -4.5}
+        - {x: 4.5, y: 4.5}
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

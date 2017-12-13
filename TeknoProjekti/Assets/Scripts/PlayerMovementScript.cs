@@ -129,18 +129,24 @@ public class PlayerMovementScript : MonoBehaviour
     IEnumerator PlayerSwordAttackRight()
     {
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         colliderScript = ColliderOne.GetComponent<PlayerColliderScript>();
 
-        if (colliderScript.inRange)
+        if (colliderScript.inRange && facingRight)
         {
             colliderScript.targetHealth.Damage(SlashDamage);
         }
 
-        if (colliderScript.inRangeRanged)
+        if (colliderScript.inRangeRanged && facingRight)
         {
             colliderScript.enemyHealth.Damage(SlashDamage);
         }
+
+        if (colliderScript.inRangeBoss && facingRight)
+        {
+            colliderScript.BossHealth.Damage(SlashDamage);
+        }
+
 
         //timer = 0f;
 
@@ -150,17 +156,22 @@ public class PlayerMovementScript : MonoBehaviour
     IEnumerator PlayerSwordAttackLeft()
     {
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         colliderScript = ColliderTwo.GetComponent<PlayerColliderScript>();
 
-        if (colliderScript.inRange)
+        if (colliderScript.inRange && !facingRight)
         {
             colliderScript.targetHealth.Damage(SlashDamage);
         }
 
-        if (colliderScript.inRangeRanged)
+        if (colliderScript.inRangeRanged && !facingRight)
         {
             colliderScript.enemyHealth.Damage(SlashDamage);
+        }
+
+        if (colliderScript.inRangeBoss && !facingRight)
+        {
+            colliderScript.BossHealth.Damage(SlashDamage);
         }
 
         //timer = 0f;
